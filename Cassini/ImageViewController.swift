@@ -44,12 +44,17 @@ class ImageViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
+            
+            scrollView.delegate = self
+            
+            scrollView.minimumZoomScale = 0.5
+            scrollView.maximumZoomScale = 2.0
             scrollView.contentSize = imageView.frame.size
             scrollView.addSubview(imageView)
         }
     }
     
-    private var imageView = UIImageView()
+    fileprivate var imageView = UIImageView()
     
     private var image: UIImage? {
         get {
@@ -64,3 +69,34 @@ class ImageViewController: UIViewController {
     }
     
 }
+
+
+extension ImageViewController: UIScrollViewDelegate {
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

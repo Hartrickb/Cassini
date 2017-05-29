@@ -31,7 +31,6 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(imageView)
         imageURL = DemoURL.stanford
     }
     
@@ -40,6 +39,13 @@ class ImageViewController: UIViewController {
         
         if image == nil {
             fetchImage()
+        }
+    }
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.contentSize = imageView.frame.size
+            scrollView.addSubview(imageView)
         }
     }
     
@@ -53,6 +59,7 @@ class ImageViewController: UIViewController {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
         }
     }
     

@@ -31,7 +31,6 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageURL = DemoURL.stanford
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +46,7 @@ class ImageViewController: UIViewController {
             
             scrollView.delegate = self
             
-            scrollView.minimumZoomScale = 0.5
+            scrollView.minimumZoomScale = 0.03
             scrollView.maximumZoomScale = 2.0
             scrollView.contentSize = imageView.frame.size
             scrollView.addSubview(imageView)

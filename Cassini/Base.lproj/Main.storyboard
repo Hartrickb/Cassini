@@ -91,18 +91,19 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrD-cl-MJP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hLA-dg-shE">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hLA-dg-shE">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mrD-cl-MJP" firstAttribute="top" secondItem="WFA-W1-sEy" secondAttribute="top" id="Bdi-LX-nMm"/>
-                            <constraint firstItem="mrD-cl-MJP" firstAttribute="bottom" secondItem="eIh-yj-xCJ" secondAttribute="top" id="CI4-ww-l8I"/>
-                            <constraint firstItem="mrD-cl-MJP" firstAttribute="leading" secondItem="WFA-W1-sEy" secondAttribute="leading" id="bpw-Bl-kSs"/>
-                            <constraint firstAttribute="trailing" secondItem="mrD-cl-MJP" secondAttribute="trailing" id="f5d-uP-SpW"/>
+                            <constraint firstItem="mrD-cl-MJP" firstAttribute="top" secondItem="WFA-W1-sEy" secondAttribute="top" id="1ks-St-O5l"/>
+                            <constraint firstItem="mrD-cl-MJP" firstAttribute="centerY" secondItem="hLA-dg-shE" secondAttribute="centerY" id="5Rs-x5-e5w"/>
+                            <constraint firstItem="mrD-cl-MJP" firstAttribute="bottom" secondItem="eIh-yj-xCJ" secondAttribute="top" id="Ey6-e1-wAV"/>
+                            <constraint firstAttribute="trailing" secondItem="mrD-cl-MJP" secondAttribute="trailing" id="Rot-Zu-llg"/>
+                            <constraint firstItem="mrD-cl-MJP" firstAttribute="leading" secondItem="WFA-W1-sEy" secondAttribute="leading" id="YxD-JP-P9H"/>
+                            <constraint firstItem="mrD-cl-MJP" firstAttribute="centerX" secondItem="hLA-dg-shE" secondAttribute="centerX" id="rd4-uy-Sro"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5TX-Ve-ZBt"/>

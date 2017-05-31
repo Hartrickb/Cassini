@@ -21,9 +21,14 @@ class ImageViewController: UIViewController {
     
     private func fetchImage() {
         if let url = imageURL {
-            let urlContents = try? Data(contentsOf: url)
-            if let imageData = urlContents {
-                image = UIImage(data: imageData)
+            
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let urlContents = try? Data(contentsOf: url)
+                if let imageData = urlContents, url == self?.imageURL {
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(data: imageData)
+                    }
+                }
             }
         }
     }

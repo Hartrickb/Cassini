@@ -8,7 +8,13 @@
 
 import UIKit
 
-class CassiniViewController: UIViewController {
+class CassiniViewController: UIViewController, UISplitViewControllerDelegate {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.splitViewController?.delegate = self
+    }
     
     // MARK: - Navigation
 
@@ -20,7 +26,16 @@ class CassiniViewController: UIViewController {
             }
         }
     }
-
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        if primaryViewController.contents == self {
+            if let imageViewController = secondaryViewController.contents as? ImageViewController, imageViewController.imageURL == nil {
+                return true
+            }
+        }
+        return false
+    }
+    
 }
 
 

@@ -108,6 +108,7 @@
                     <navigationItem key="navigationItem" id="5TX-Ve-ZBt"/>
                     <connections>
                         <outlet property="scrollView" destination="mrD-cl-MJP" id="Au0-HA-Csx"/>
+                        <outlet property="spinner" destination="hLA-dg-shE" id="hPu-jL-gZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXy-qy-NBw" userLabel="First Responder" sceneMemberID="firstResponder"/>

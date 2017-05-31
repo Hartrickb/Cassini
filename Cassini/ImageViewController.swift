@@ -10,6 +10,8 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    // MARK: Model
+    
     var imageURL: URL? {
         didSet {
             image = nil
@@ -19,9 +21,14 @@ class ImageViewController: UIViewController {
         }
     }
     
+    // MARK: Private Implementation
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     private func fetchImage() {
         if let url = imageURL {
             
+            spinner.startAnimating()
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 let urlContents = try? Data(contentsOf: url)
                 if let imageData = urlContents, url == self?.imageURL {
@@ -32,6 +39,8 @@ class ImageViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +78,7 @@ class ImageViewController: UIViewController {
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
